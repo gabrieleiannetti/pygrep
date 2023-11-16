@@ -1,22 +1,12 @@
 #!/usr/bin/env python3
+#
 # -*- coding: utf-8 -*-
 #
-# Copyright 2022 Gabriele Iannetti <g.iannetti@gsi.de>
+# © Copyright 2023 GSI Helmholtzzentrum für Schwerionenforschung
 #
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program. If not, see <http://www.gnu.org/licenses/>.
-#
-
+# This software is distributed under
+# the terms of the GNU General Public Licence version 3 (GPL Version 3),
+# copied verbatim in the file "LICENCE".
 
 import argparse
 import logging
@@ -24,9 +14,7 @@ import sys
 import os
 import re
 
-
 DEFAULT_OUTPUT_SEPERATOR = '|'
-
 
 def init_arg_parser():
 
@@ -64,7 +52,6 @@ def init_arg_parser():
 
     return parser.parse_args()
 
-
 def init_logging(enable_debug):
 
     if enable_debug:
@@ -73,7 +60,6 @@ def init_logging(enable_debug):
         log_level = logging.INFO
 
     logging.basicConfig(level=log_level, format="%(asctime)s - %(levelname)s: %(message)s")
-
 
 def main():
 
@@ -130,7 +116,6 @@ def main():
         filename = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
         # TODO: Add exception type
         logging.error(f"Exception in {filename} (line: {exc_tb.tb_lineno}): {err}")
-
 
 if __name__ == '__main__':
     main()
